@@ -5,6 +5,3 @@ pred boolean_ring(s: set univ, tms,pls: s->s->s, e,u: s){
 
   idempotent[s,tms]
 }
-
-
-

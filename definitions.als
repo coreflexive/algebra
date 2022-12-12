@@ -61,7 +61,9 @@ pred inverse(s: set univ, f: s->s->s, e,b,a: s) {
   right_inverse[s,f,e,b,a]
 }
 
-
+pred self_inverse(s: set univ, f: s->s->s, e: s) {
+  all p: s | f[p,p] = e
+}
 
 pred distl(s: set univ, f,g: s->s->s) {
   all a,b,c: s {
