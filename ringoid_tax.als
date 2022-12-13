@@ -1,4 +1,4 @@
-open magma_tax
+open operator_tax
 
 pred ringoid(s: set univ, tms,pls: s->s->s){
   distl[s,tms,pls]

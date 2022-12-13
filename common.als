@@ -1,13 +1,3 @@
-pred binop(s: univ, f: s->s->s) {
-  f in (s->s) -> one s
-}
-
-pred unop(s: set univ, f: s->s) {
-  f in s -> one s
-}
-
-
-
 pred associative(s: univ, f: s->s->s) {
   all a,b,c: s {
     f[f[a,b],c] = f[a,f[b,c]]

@@ -1,4 +1,4 @@
-open definitions
+open operator_tax
 
 pred boolean_algebra(s: set univ, mt,jn: s->s->s, ng: s->s, z,u: s) {
   binop[s,mt]

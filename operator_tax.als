@@ -1,7 +1,11 @@
-open definitions
+open common
 
-pred magma(s: univ, f: s->s->s) {
-  f in s->s->s
+pred binop(s: univ, f: s->s->s) {
+  f in (s->s) -> one s
+}
+
+pred unop(s: set univ, f: s->s) {
+  f in s -> one s
 }
 
 pred semigroup(s: univ, f: s->s->s) {
