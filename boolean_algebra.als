@@ -10,8 +10,8 @@ pred boolean_algebra(s: set univ, mt,jn: s->s->s, ng: s->s, z,u: s) {
   ng[u] = z
 
   -- (12)
-  zero[s,mt,z]
-  zero[s,jn,u]
+  right_zero[s,mt,z]
+  right_zero[s,jn,u]
 
   -- (13)
   right_identity[s, mt, u]
@@ -68,14 +68,7 @@ pred boolean_algebra_alt(s: set univ, mt,jn: s->s->s, ng: s->s, z,u: s) {
   distl[s,jn,mt]
 }
 
-pred zero(s: univ, f: s->s->s, z: s) {
-  all p: s | f[p,z] = z
-}
-
-pred complementary(s: set univ, f: s->s->s, g: s->s, y: s) {
-  all x: s | f[x,g[x]] = y
-}
-
 pred demorgan(s: set univ, f,g: s->s->s, ng: s->s) {
   all x,y: s | ng[f[x,y]] = g[ng[x],ng[y]]
 }
+

@@ -26,7 +26,18 @@ pred idempotent(s: univ, f: s->s->s) {
   }
 }
 
+pred left_zero(s: univ, f: s->s->s, z: s) {
+  all p: s | f[z,p] = z
+}
 
+pred right_zero(s: univ, f: s->s->s, z: s) {
+  all p: s | f[p,z] = z
+}
+
+pred zero(s: univ, f: s->s->s, z: s) {
+  left_zero[s,f,z]
+  right_zero[s,f,z]
+}
 
 pred left_identity(s: set univ, f: s->s->s, l: s) {
   all a: s {
@@ -63,6 +74,10 @@ pred inverse(s: set univ, f: s->s->s, e,b,a: s) {
 
 pred self_inverse(s: set univ, f: s->s->s, e: s) {
   all p: s | f[p,p] = e
+}
+
+pred complementary(s: set univ, f: s->s->s, g: s->s, y: s) {
+  all x: s | f[x,g[x]] = y
 }
 
 pred distl(s: set univ, f,g: s->s->s) {
