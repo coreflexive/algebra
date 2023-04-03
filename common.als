@@ -85,3 +85,7 @@ pred distr(s: set univ, f,g: s->s->s) {
 pred involution(s: set univ, f: s->s) {
   all x: s | f[f[x]] = x
 }
+
+pred absorption(s: set univ, f,g: s->s->s) {
+	all a,b: s | f[a,g[a,b]] = a
+}
