@@ -1,30 +1,30 @@
-pred associative(s: univ, f: s->s->s) {
+pred associative(s: set univ, f: s->s->s) {
   all a,b,c: s {
     f[f[a,b],c] = f[a,f[b,c]]
   }
 }
 
-pred commutative(s: univ, f: s->s->s) {
+pred commutative(s: set univ, f: s->s->s) {
   all a,b: s {
     f[a,b] = f[b,a]
   }
 }
 
-pred idempotent(s: univ, f: s->s->s) {
+pred idempotent(s: set univ, f: s->s->s) {
   all a: s {
     f[a,a] = a
   }
 }
 
-pred left_zero(s: univ, f: s->s->s, z: s) {
+pred left_zero(s: set univ, f: s->s->s, z: s) {
   all p: s | f[z,p] = z
 }
 
-pred right_zero(s: univ, f: s->s->s, z: s) {
+pred right_zero(s: set univ, f: s->s->s, z: s) {
   all p: s | f[p,z] = z
 }
 
-pred zero(s: univ, f: s->s->s, z: s) {
+pred zero(s: set univ, f: s->s->s, z: s) {
   left_zero[s,f,z]
   right_zero[s,f,z]
 }
